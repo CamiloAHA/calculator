@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+}
+
+.background {
+  background-color: gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.calculator {
+  background-color: black;
+  border-radius: 20px;
+  height: 80vh;
+  width: 55vh;
+}
+
+.screen {
+  background-color: white;
+  height: 12vh;
+  margin: 40px 30px;
+  border-radius: 10px;
+}
+
+.buttons {
+  background-color: goldenrod;
+  height: 50vh;
+  margin: 40px 30px;
+  border-radius: 10px;
+}
