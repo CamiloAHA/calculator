@@ -5,10 +5,18 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+h1 {
+  margin: 0;
+  padding: 0px 5px;
+  font-size: 7.5vh;
+  overflow: hidden;
+}
+
 h2 {
   margin: 0;
   padding: 1px 5px;
-  font-size: 5vh;
+  font-size: 4.5vh;
+  overflow: hidden;
 }
 
 .background {
@@ -29,7 +37,7 @@ h2 {
 
 .screen {
   text-align: right;
-  padding: 2px;
+  padding: 0px;
   border: 1px solid black;
   background-color: white;
   height: 14vh;
