@@ -7,6 +7,7 @@ body {
 
 h2 {
   margin: 0;
+  padding: 1px 5px;
   font-size: 5vh;
 }
 
@@ -40,16 +41,19 @@ h2 {
   background-color: gray;
   height: 50vh;
   margin: 4vh;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .buttons button {
+  justify-content: space-around;
+  align-items: center;
   border: 1px solid black;
   font-size: 3.5vh;
+  overflow: hidden;
   padding: 0;
+  justify-self: center;
+  align-self: center;
   text-align: center;
   width: 10vh;
   max-width: 17vw; /*Small width to height ratio responsive*/

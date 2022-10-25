@@ -5,12 +5,12 @@ function display() {
     let numbers, op;
     dispTxt.innerText = '0'
     window.addEventListener('keyup', e => {
-        if (/[.\d\+\-\*\/\(\)]/.test(e.key) || e.code === 'Backspace' ||
+        if (/^[.\d\+\-\*\/\(\)]/.test(e.key) || e.code === 'Backspace' ||
             e.code === 'Enter' || e.code === 'Delete') {
             let selector
             if (e.code === 'Enter') e.preventDefault();
             //Choose appropriate selector if a special character is key-press
-            (/[.\+\-\*\/\(\)]/.test(e.key)) ? selector = `#btn-\\${e.key}` : selector = `#btn-${e.key}`
+            (/^[.\+\-\*\/\(\)]/.test(e.key)) ? selector = `#btn-\\${e.key}` : selector = `#btn-${e.key}`
             const pressBtn = document.querySelector(selector)
             pressBtn.click()
         }
@@ -27,9 +27,9 @@ function display() {
                 numbers = dispTxt.innerText.split(/[\+\-\/\(\)\u00D7]/)
                 if (numbers[1] != '') dispTxt.innerText = operate(op, +numbers[0], +numbers[1])
             }
-        } else if (/^[\d\(\)]$/.test(btnContent)) { //Numbers and brackets keys
+        } else if (/[\d\(\)]/.test(btnContent)) { //Numbers and brackets keys
             (dispTxt.innerText === '0') ? dispTxt.innerText = btnContent : dispTxt.innerText += btnContent
-        } else if (/[.\+\-\/\u00D7]/.test(btnContent)) { //Especial characters keys
+        } else if (/[.\+\-\/\u00D7]/.test(btnContent)) { //Special characters keys
             //Checking operation signs to avoid evaluation of more than a single pair of numbers at a time.
             if (btnContent != '.' && /[\+\-\/\u00D7]/.test(dispTxt.innerText)) {
                 //todo fix for negative numbers
@@ -53,7 +53,7 @@ function display() {
                 }
             }
         }
-        //For avoid conflicts with Enter key
+        //To avoid conflicts with Enter key
         e.target.blur()
     }))
     screen.append(dispTxt)
